@@ -8,10 +8,13 @@ import { FormControl } from '@angular/forms';
 })
 export class NameEditorComponent {
   name = new FormControl('');
-  val =new FormControl('');
+  val = new FormControl('');
+  email = new FormControl<string|null>(null);
+  
 
   updateName() {
     this.name.setValue('Nancy');
+   // this.email.setValue('ssss')
   }
 }
 
