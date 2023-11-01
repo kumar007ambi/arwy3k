@@ -9,6 +9,11 @@ button {
   max-width: 300px;
 }
 
+#val{
+  height: 28px;
+  width: 388px;
+}
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
