@@ -6,7 +6,7 @@
 <input id="email" type="email" [formControl]="email" />
 
 <div *ngIf="name.invalid && (name.dirty || name.touched)"
-    class="alert">
+    class="alert" style="color: red;">
 
   <div *ngIf="name.errors?.['required']">
     Name is required.
