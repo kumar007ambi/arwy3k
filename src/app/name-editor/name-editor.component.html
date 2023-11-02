@@ -1,21 +1,20 @@
 <label for="name">Name: </label>
 <input id="name" type="text" required minlength="4" [formControl]="name" />
-<label for="val">Number: </label>
-<input id="val" type="number" [formControl]="val" />
-<label for="email">Email: </label>
-<input id="email" type="email" [formControl]="email" />
-
 <div *ngIf="name.invalid && (name.dirty || name.touched)"
     class="alert" style="color: red;">
-
   <div *ngIf="name.errors?.['required']">
     Name is required.
   </div>
   <div *ngIf="name.errors?.['minlength']">
     Name must be at least 4 characters long.
   </div>
-
 </div>
+<label for="val">Number: </label>
+<input id="val" type="number" [formControl]="val" />
+<label for="email">Email: </label>
+<input id="email" type="email" [formControl]="email" />
+
+
 
 <p>Name Value: {{ name.value }}</p>
 <p>Number Value: {{ val.value }}</p>
