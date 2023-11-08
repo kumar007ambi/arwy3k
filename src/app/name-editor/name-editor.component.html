@@ -18,7 +18,7 @@
   </div>
 </div>
 <label for="email">Email: </label>
-<input id="email" type="email" required pattern="[a-zA-Z ]*" [formControl]="email" />
+<input id="email" type="email" required maxlength="16" pattern="[a-z0-9]*" [formControl]="email" />
 <div *ngIf="email.invalid && (email.dirty || email.touched)"
     class="alert" style="color: red;">
   <div *ngIf="email.errors?.['required']">
