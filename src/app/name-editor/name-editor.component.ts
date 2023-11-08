@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
@@ -9,13 +9,13 @@ import { FormControl } from '@angular/forms';
 export class NameEditorComponent {
   name = new FormControl();
   val = new FormControl('');
-  email = new FormControl<string|null>(null);
+  email = new FormControl<string|null>('', Validators.pattern('[a-zA-Z ]*'));
   
 
   updateName() {
     this.name.setValue('Nancy');
     this.val.setValue('12345')
-    this.email.setValue('test@gamil.com');
+    //this.email.setValue('test@gamil.com');
   }
 }
 
