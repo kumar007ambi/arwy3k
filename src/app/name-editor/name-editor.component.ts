@@ -7,14 +7,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent {
-  name = new FormControl('');
+  name = new FormControl();
   val = new FormControl('');
   email = new FormControl<string|null>(null);
   
 
   updateName() {
     this.name.setValue('Nancy');
-   // this.email.setValue('ssss')
+    this.email.setValue('test@gamil.com');
   }
 }
 
