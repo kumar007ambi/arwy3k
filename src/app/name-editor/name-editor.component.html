@@ -10,9 +10,21 @@
   </div>
 </div>
 <label for="val">Number: </label>
-<input id="val" type="number" [formControl]="val" />
+<input id="val" type="number" required [formControl]="val" />
+<div *ngIf="val.invalid && (val.dirty || val.touched)"
+    class="alert" style="color: red;">
+  <div *ngIf="val.errors?.['required']">
+    Number is required.
+  </div>
+</div>
 <label for="email">Email: </label>
-<input id="email" type="email" [formControl]="email" />
+<input id="email" type="email" required [formControl]="email" />
+<div *ngIf="email.invalid && (email.dirty || email.touched)"
+    class="alert" style="color: red;">
+  <div *ngIf="email.errors?.['required']">
+    Email is required.
+  </div>
+</div>
 
 
 
