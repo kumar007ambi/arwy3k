@@ -14,6 +14,7 @@ export class NameEditorComponent {
 
   updateName() {
     this.name.setValue('Nancy');
+    this.val.setValue('12345')
     this.email.setValue('test@gamil.com');
   }
 }
