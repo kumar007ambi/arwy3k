@@ -7,7 +7,7 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent {
-  name = new FormControl();
+  name = new FormControl('');
   val = new FormControl('');
   email = new FormControl<string|null>('',Validators.maxLength(12));
   
