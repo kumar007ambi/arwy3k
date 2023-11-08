@@ -1,5 +1,5 @@
 <label for="name">Name: </label>
-<input id="name" type="text" required minlength="4" [formControl]="name" />
+<input id="name" type="text" required minlength="6" [formControl]="name" />
 <div *ngIf="name.invalid && (name.dirty || name.touched)"
     class="alert" style="color: red;">
   <div *ngIf="name.errors?.['required']">
