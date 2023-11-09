@@ -10,7 +10,7 @@ export class NameEditorComponent {
   form = new FormGroup({
     name : new FormControl(''),
     val : new FormControl(''),
-    email : new FormControl<string|null>(''),
+    email : new FormControl(''),
   })
  
   
