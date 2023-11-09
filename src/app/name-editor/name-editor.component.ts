@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,15 +7,21 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent {
-  name = new FormControl('',Validators.minLength(6));
-  val = new FormControl('');
-  email = new FormControl<string|null>('',Validators.maxLength(12));
+  form = new FormGroup({
+    name : new FormControl(''),
+    val : new FormControl(''),
+    email : new FormControl<string|null>(''),
+  })
+ 
   
 
-  updateName() {
-    this.name.setValue('Nancy');
-    this.email.setValue('test@gamil.com');
-  }
+  // updateName() {
+  //   this.name.setValue('Nancy');
+  //   this.email.setValue('test@gamil.com'),
+  // }
+  // onSubmit() {
+  //   console.log()
+  // }
 }
 
 
