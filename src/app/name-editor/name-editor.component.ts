@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,8 +7,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent {
-  form = new FormGroup({
-    name : new FormControl(''),
+  userform = new FormGroup({
+    firstname : new FormControl('',[Validators.required,Validators.minLength(15)]),
     val : new FormControl(''),
     email : new FormControl(''),
   })

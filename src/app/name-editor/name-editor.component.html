@@ -1,6 +1,16 @@
-<form [formGroup]="form" >
-<label for="name">Name: </label>
-<input id="name" type="text" required  formControlName="name" />
+<form [formGroup]="userform" >
+<label for="firstname">Name: </label>
+<input id="firstname" type="text" name="firstname" required  formControlName="firstname" />
+<div
+*ngIf="!firstname?.valid && (firstname?.dirty ||
+firstname?.touched)">
+<div [hidden]="!firstname.errors.required">
+  First Name is required
+</div>
+<div [hidden]="!firstname.errors.minlength">
+  Min Length is 10
+</div>
+</div>
 
 <label for="val">Number: </label>
 <input id="val" type="number" required formControlName="val" />
@@ -16,7 +26,7 @@
 <p>Email Value: {{ email.value }}</p> -->
 
 
-<button type="button"  [disabled]="!form.valid" >Update Name</button>
+<button type="button"  [disabled]="!userform.valid" >Update Name</button>
 </form>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
