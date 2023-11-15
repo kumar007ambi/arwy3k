@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,12 +6,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './name-editor.component.html',
   styleUrls: ['./name-editor.component.css']
 })
-export class NameEditorComponent {
-  userform = new FormGroup({
-    firstname : new FormControl('',[Validators.required,Validators.minLength(15)]),
-    val : new FormControl(''),
-    email : new FormControl(''),
-  })
+export class NameEditorComponent implements OnInit {
+  userForm:FormGroup|any;
+  ngOnInit(){
+    this.userForm = new FormGroup({
+      firstName : new FormControl('',[Validators.required,Validators.minLength(15)]),
+      val : new FormControl(''),
+      email : new FormControl(''),
+    })
+  }
+  
+  get firstName(){
+    return this.userForm.get('firstName');
+  }
  
   
 
@@ -19,9 +26,9 @@ export class NameEditorComponent {
   //   this.name.setValue('Nancy');
   //   this.email.setValue('test@gamil.com'),
   // }
-  // onSubmit() {
-  //   console.log()
-  // }
+  onSubmit() {
+    console.log(this.userForm)
+  }
 }
 
 

@@ -1,16 +1,16 @@
-<form [formGroup]="userform" >
-<label for="firstname">Name: </label>
-<input id="firstname" type="text" name="firstname" required  formControlName="firstname" />
-<div
-*ngIf="!firstname?.valid && (firstname?.dirty ||
-firstname?.touched)">
-<div [hidden]="!firstname.errors.required">
-  First Name is required
-</div>
-<div [hidden]="!firstname.errors.minlength">
-  Min Length is 10
-</div>
-</div>
+<form [formGroup]="userForm" (ngSubmit) = "onSubmit()">
+<label for="firstName">Name: </label>
+<input id="firstName" type="text" name="firstName"  formControlName="firstName" />
+<div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+    <div *ngIf="firstName.errors?.['required']">
+     Name required.
+    </div>
+    <div *ngIf="firstName.errors?.['minlength']">
+      Too short
+    </div>
+  </div>
+
+
 
 <label for="val">Number: </label>
 <input id="val" type="number" required formControlName="val" />
@@ -26,7 +26,7 @@ firstname?.touched)">
 <p>Email Value: {{ email.value }}</p> -->
 
 
-<button type="button"  [disabled]="!userform.valid" >Update Name</button>
+<button type="button"  [disabled]="!userForm.valid" >Update Name</button>
 </form>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
