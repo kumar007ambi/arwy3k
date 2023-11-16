@@ -12,6 +12,7 @@ export class ProfileEditorComponent {
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['',Validators.required],
+    
     address: this.fb.group({
       street: [''],
       city: [''],
@@ -34,7 +35,10 @@ export class ProfileEditorComponent {
       firstName: 'Nancy',
       lastName:'Mathew',
       address: {
-        street: '123 Drew Street'
+        street: '123 Drew Street',
+        city: 'Kolkata',
+        state: 'West Bengal',
+        zip: '700091'
       }
     });
   }
