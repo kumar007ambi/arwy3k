@@ -1,7 +1,7 @@
 <form [formGroup]="userForm" (ngSubmit) = "onSubmit()">
 <label for="firstName">Name: </label>
 <input id="firstName" type="text" name="firstName"  formControlName="firstName" />
-<div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+<div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" style="color: red;" class="alert alert-danger">
     <div *ngIf="firstName.errors?.['required']">
      Name required.
     </div>
@@ -14,7 +14,7 @@
 
 <label for="valNumber">Number: </label>
 <input id="valNumber" type="number" name="valNumber" formControlName="valNumber" />
-<div *ngIf="valNumber.invalid && (valNumber.dirty || valNumber.touched)" class="alert alert-danger">
+<div *ngIf="valNumber.invalid && (valNumber.dirty || valNumber.touched)" style="color: red;" class="alert alert-danger">
   <div *ngIf="valNumber.errors?.['required']">
    Number required.
   </div>
