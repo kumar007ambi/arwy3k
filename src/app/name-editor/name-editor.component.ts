@@ -30,7 +30,7 @@ export class NameEditorComponent implements OnInit {
   //   this.email.setValue('test@gamil.com'),
   // }
   onSubmit() {
-    console.log(this.userForm)
+    console.log(this.userForm.value)
   }
 }
 
