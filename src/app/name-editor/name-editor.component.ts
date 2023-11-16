@@ -7,8 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent implements OnInit {
-  userForm : FormGroup|any;
-
+  userForm:FormGroup|any;
   ngOnInit(){
     this.userForm = new FormGroup({
       firstName : new FormControl('',[Validators.required,Validators.minLength(15)]),
@@ -22,7 +21,7 @@ export class NameEditorComponent implements OnInit {
   }
  
   get valNumber(){
-    return this.userForm.get('valNumber');
+    return this.userForm.get('valNumber')
   }
   
 
