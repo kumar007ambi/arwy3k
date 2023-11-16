@@ -12,8 +12,16 @@
 
 
 
-<label for="val">Number: </label>
-<input id="val" type="number" required formControlName="val" />
+<label for="valNumber">Number: </label>
+<input id="valNumber" type="number" name="valNumber" formControlName="valNumber" />
+<div *ngIf="valNumber.invalid && (valNumber.dirty || valNumber.touched)" class="alert alert-danger">
+  <div *ngIf="valNumber.errors?.['required']">
+   Number required.
+  </div>
+  <div *ngIf="valNumber.errors?.['maxlength']">
+    Too short
+  </div>
+</div>
 
 <label for="email">Email: </label>
 <input id="email" type="email" required  formControlName="email" />
