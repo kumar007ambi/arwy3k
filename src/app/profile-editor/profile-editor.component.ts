@@ -11,7 +11,7 @@ import { FormArray } from '@angular/forms';
 export class ProfileEditorComponent {
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
-    lastName: [''],
+    lastName: ['',Validators.required],
     address: this.fb.group({
       street: [''],
       city: [''],
@@ -32,6 +32,7 @@ export class ProfileEditorComponent {
   updateProfile() {
     this.profileForm.patchValue({
       firstName: 'Nancy',
+      lastName:'Mathew',
       address: {
         street: '123 Drew Street'
       }
