@@ -16,7 +16,7 @@
 <input id="valNumber" type="number" name="valNumber" formControlName="valNumber" />
 <div *ngIf="valNumber.invalid && (valNumber.dirty || valNumber.touched)" style="color: red;" class="alert alert-danger">
   <div *ngIf="valNumber.errors?.['required']">
-   Number required.
+   Number is required.
   </div>
   <div *ngIf="valNumber.errors?.['pattern']">
     Too short
