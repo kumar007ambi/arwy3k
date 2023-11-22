@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
@@ -8,7 +8,7 @@ import { FormArray } from '@angular/forms';
   templateUrl: './profile-editor.component.html',
   styleUrls: ['./profile-editor.component.css']
 })
-export class ProfileEditorComponent {
+export class ProfileEditorComponent implements OnInit{
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['',Validators.required],
@@ -29,6 +29,10 @@ export class ProfileEditorComponent {
   }
 
   constructor(private fb: FormBuilder) { }
+  ngOnInit(): void {
+
+    
+  }
 
   updateProfile() {
     this.profileForm.patchValue({
