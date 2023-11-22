@@ -7,26 +7,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent implements OnInit {
-  userForm:FormGroup|any;
-  ngOnInit(){
+  userForm: FormGroup | any;
+  ngOnInit() {
     this.userForm = new FormGroup({
-      firstName : new FormControl('',[Validators.required,Validators.minLength(15)]),
-      valNumber : new FormControl('',[Validators.required,Validators.maxLength(10)]),
-      email : new FormControl('',[Validators.required,Validators.email]),
+      firstName: new FormControl('', [Validators.required, Validators.minLength(15)]),
+      valNumber: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
     })
   }
-  
-  get firstName(){
+
+  get firstName() {
     return this.userForm.get('firstName');
   }
- 
-  get valNumber(){
+
+  get valNumber() {
     return this.userForm.get('valNumber')
   }
-   get email(){
+  get email() {
     return this.userForm.get('email')
-   }
-  
+  }
+
 
   // updateName() {
   //   this.name.setValue('Nancy');
