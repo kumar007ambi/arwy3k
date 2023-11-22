@@ -12,7 +12,7 @@ export class NameEditorComponent implements OnInit {
     this.userForm = new FormGroup({
       firstName : new FormControl('',[Validators.required,Validators.minLength(15)]),
       valNumber : new FormControl('',[Validators.required,Validators.maxLength(10)]),
-      email : new FormControl(''),
+      email : new FormControl('',[Validators.required,Validators.email]),
     })
   }
   
@@ -23,6 +23,9 @@ export class NameEditorComponent implements OnInit {
   get valNumber(){
     return this.userForm.get('valNumber')
   }
+   get email(){
+    return this.userForm.get('email')
+   }
   
 
   // updateName() {

@@ -25,8 +25,14 @@
 
 <label for="email">Email: </label>
 <input id="email" type="email" required  formControlName="email" />
-
-
+<div *ngIf="email.invalid && (email.dirty || email.touched)" style="color: red;" class="alert alert-danger">
+  <div *ngIf="email.errors?.['required']">
+   Email is required.
+  </div>
+  <div *ngIf="email.errors?.['email']">
+    Enter valid email
+  </div>
+</div>
 
 
 <!-- <p>Name Value: {{ name.value }}</p>
