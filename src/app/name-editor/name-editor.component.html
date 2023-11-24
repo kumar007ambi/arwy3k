@@ -1,38 +1,14 @@
-<form [formGroup]="userForm" (ngSubmit) = "onSubmit()">
-<label for="firstName">Name: </label>
-<input id="firstName" type="text" name="firstName"  formControlName="firstName" />
-<div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" style="color: red;" class="alert alert-danger">
-    <div *ngIf="firstName.errors?.['required']">
-     Name required.
-    </div>
-    <div *ngIf="firstName.errors?.['minlength']">
-      Too short for Full Name
-    </div>
-  </div>
+<form [formGroup]="form" >
+<label for="name">Name: </label>
+<input id="name" type="text" required  formControlName="name" />
 
-
-
-<label for="valNumber">Number: </label>
-<input id="valNumber" type="number" name="valNumber" formControlName="valNumber" />
-<div *ngIf="valNumber.invalid && (valNumber.dirty || valNumber.touched)" style="color: red;" class="alert alert-danger">
-  <div *ngIf="valNumber.errors?.['required']">
-   Number is required.
-  </div>
-  <div *ngIf="valNumber.errors?.['pattern']">
-    Too short
-  </div>
-</div>
+<label for="val">Number: </label>
+<input id="val" type="number" required formControlName="val" />
 
 <label for="email">Email: </label>
 <input id="email" type="email" required  formControlName="email" />
-<div *ngIf="email.invalid && (email.dirty || email.touched)" style="color: red;" class="alert alert-danger">
-  <div *ngIf="email.errors?.['required']">
-   Email is required.
-  </div>
-  <div *ngIf="email.errors?.['email']">
-    Valid email is required
-  </div>
-</div>
+
+
 
 
 <!-- <p>Name Value: {{ name.value }}</p>
@@ -40,7 +16,7 @@
 <p>Email Value: {{ email.value }}</p> -->
 
 
-<button type="button"  [disabled]="!userForm.valid" >Update Name</button>
+<button type="button"  [disabled]="!form.valid" >Update Name</button>
 </form>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
