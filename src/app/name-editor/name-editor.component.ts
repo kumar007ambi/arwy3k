@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,12 +6,22 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './name-editor.component.html',
   styleUrls: ['./name-editor.component.css']
 })
-export class NameEditorComponent {
+export class NameEditorComponent implements OnInit {
+  ngOnInit(): void {
+    console.log(this.form.get)
+  }
   form = new FormGroup({
     name : new FormControl(''),
     val : new FormControl(''),
     email : new FormControl(''),
   })
+
+  get name(){
+    return this.form.get('name');
+  }
+
+
+  
  
   
 
