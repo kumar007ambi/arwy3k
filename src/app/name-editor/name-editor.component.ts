@@ -10,10 +10,10 @@ export class NameEditorComponent implements OnInit {
   form:any;
   ngOnInit(): void {
    
-    this.form=this.fb.group({
-      name:['',Validators.required,Validators.minLength(4)],
-      val:[''],
-      email:['']
+    this.form=new FormGroup({
+      name:new FormControl('',[Validators.required,Validators.minLength(10)]),
+      val:new FormControl(''),
+      email:new FormControl()
     })
   }
   // form = new FormGroup({
@@ -25,7 +25,7 @@ export class NameEditorComponent implements OnInit {
   
 
   get name(){
-    return this.form.get('name');
+    return this.form.get('name')!;
   }
 
 
