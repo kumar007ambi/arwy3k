@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
@@ -17,7 +17,7 @@ export class NameEditorComponent implements OnInit {
   // })
   constructor(private fb:FormBuilder){}
   form=this.fb.group({
-    name:[''],
+    name:['',Validators.required],
     val:[''],
     email:['']
   })
