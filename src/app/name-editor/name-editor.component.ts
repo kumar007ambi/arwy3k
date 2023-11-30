@@ -7,8 +7,14 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent implements OnInit {
+  form:any;
   ngOnInit(): void {
-    console.log(this.form.get)
+   
+    this.form=this.fb.group({
+      name:['',Validators.required],
+      val:[''],
+      email:['']
+    })
   }
   // form = new FormGroup({
   //   name : new FormControl(''),
@@ -16,11 +22,7 @@ export class NameEditorComponent implements OnInit {
   //   email : new FormControl(''),
   // })
   constructor(private fb:FormBuilder){}
-  form=this.fb.group({
-    name:['',Validators.required],
-    val:[''],
-    email:['']
-  })
+  
 
   get name(){
     return this.form.get('name');

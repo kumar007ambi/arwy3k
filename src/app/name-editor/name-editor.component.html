@@ -1,7 +1,17 @@
 <form [formGroup]="form">
     <label for="name">Name: </label>
     <input id="name" type="text" required formControlName="name" />
-
+    <div
+    *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger" >
+    <div *ngIf="name.errors?.['required']">Name is required.</div>
+    <!-- <div *ngIf="name.errors?.['minlength']">
+      Name must be at least 4 characters long.
+    </div> -->
+    <div *ngIf="name.errors?.['forbiddenName']">
+      Name cannot be Bob.
+    </div>
+  </div>
     <label for="val">Number: </label>
     <input id="val" type="number" required formControlName="val" />
 
