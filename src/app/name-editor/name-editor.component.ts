@@ -1,35 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
   templateUrl: './name-editor.component.html',
   styleUrls: ['./name-editor.component.css']
 })
-export class NameEditorComponent implements OnInit {
-  form:any;
-  ngOnInit(): void {
-   
-    this.form=new FormGroup({
-      name:new FormControl('',[Validators.required,Validators.minLength(10)]),
-      val:new FormControl(''),
-      email:new FormControl()
-    })
-  }
-  // form = new FormGroup({
-  //   name : new FormControl(''),
-  //   val : new FormControl(''),
-  //   email : new FormControl(''),
-  // })
-  constructor(private fb:FormBuilder){}
-  
-
-  get name(){
-    return this.form.get('name')!;
-  }
-
-
-  
+export class NameEditorComponent {
+  form = new FormGroup({
+    name : new FormControl(''),
+    val : new FormControl(''),
+    email : new FormControl(''),
+  })
  
   
 

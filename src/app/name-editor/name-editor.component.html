@@ -1,33 +1,22 @@
-<form [formGroup]="form">
-    <label for="name">Name: </label>
-    <input id="name" type="text" required formControlName="name" />
-    <div
-    *ngIf="name.invalid && (name.dirty || name.touched)"
-    class="alert alert-danger" style="color: red;">
-    <div *ngIf="name.errors?.['required']">Name is required.</div>
-    <div *ngIf="name.errors?.['minlength']">
-      Name must be at least 10 characters long.
-    </div>
-    <div *ngIf="name.errors?.['forbiddenName']">
-      Name cannot be Bob.
-    </div>
-  </div>
-    <label for="val">Number: </label>
-    <input id="val" type="number" required formControlName="val" />
+<form [formGroup]="form" >
+<label for="name">Name: </label>
+<input id="name" type="text" required  formControlName="name" />
 
-    <label for="email">Email: </label>
-    <input id="email" type="email" required formControlName="email" />
+<label for="val">Number: </label>
+<input id="val" type="number" required formControlName="val" />
+
+<label for="email">Email: </label>
+<input id="email" type="email" required  formControlName="email" />
 
 
-    <p>value : {{form.value | json}}</p>
-    <p>Form Status : {{form.status}}</p>
 
-    <!-- <p>Name Value: {{ name.value }}</p>
+
+<!-- <p>Name Value: {{ name.value }}</p>
 <p>Number Value: {{ val.value }}</p>
 <p>Email Value: {{ email.value }}</p> -->
 
 
-    <button type="button" [disabled]="!form.valid">Update Name</button>
+<button type="button"  [disabled]="!form.valid" >Update Name</button>
 </form>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
