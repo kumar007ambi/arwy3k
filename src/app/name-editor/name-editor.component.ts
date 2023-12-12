@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormBuilder, Validators  } from '@angular/forms';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,13 +7,25 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent {
-  form = new FormGroup({
-    name : new FormControl(''),
-    val : new FormControl(''),
-    email : new FormControl(''),
+  constructor(private fb:FormBuilder){}
+  form = this.fb.group({
+    name : ['',Validators.required],
+    val : [''],
+    email : [''],
   })
  
-  
+  // get name(){
+  //   return this.form.get('name');
+  // }
+
+  // get val(){
+  //   return this.form.get('val');
+  // }
+
+  // get email(){
+  //   return this.form.get('email');
+  // }
+
 
   // updateName() {
   //   this.name.setValue('Nancy');
