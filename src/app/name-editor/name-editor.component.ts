@@ -9,7 +9,7 @@ import { FormControl, FormBuilder, Validators  } from '@angular/forms';
 export class NameEditorComponent {
   constructor(private fb:FormBuilder){}
   form = this.fb.group({
-    name : ['',Validators.required],
+    name : [''],
     val : [''],
     email : [''],
   })
