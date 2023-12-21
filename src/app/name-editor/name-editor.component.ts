@@ -11,7 +11,7 @@ export class NameEditorComponent {
   form = this.fb.group({
     name : ['',[Validators.required]],
     val : ['',[Validators.pattern("^[0-9]*$")]],
-    email : [''],
+    email : ['',[Validators.required]],
     address: new FormGroup({
       street: new FormControl(''),
       city: new FormControl(''),
