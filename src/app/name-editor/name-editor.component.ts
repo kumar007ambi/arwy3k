@@ -9,14 +9,14 @@ import { FormControl, FormBuilder, Validators, FormGroup  } from '@angular/forms
 export class NameEditorComponent {
   constructor(private fb:FormBuilder){}
   form = this.fb.group({
-    name : ['',Validators.required],
-    val : [''],
+    name : ['',[Validators.required]],
+    val : ['',[Validators.pattern("^[0-9]*$")]],
     email : [''],
     address: new FormGroup({
       street: new FormControl(''),
       city: new FormControl(''),
       state: new FormControl(''),
-      zip: new FormControl(''),
+      zip: new FormControl('',[Validators.pattern("^[0-9]*$")]),
     }),
   })
  
