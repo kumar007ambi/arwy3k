@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators, FormGroup  } from '@angular/forms';
 
 @Component({
@@ -6,9 +6,11 @@ import { FormControl, FormBuilder, Validators, FormGroup  } from '@angular/forms
   templateUrl: './name-editor.component.html',
   styleUrls: ['./name-editor.component.css']
 })
-export class NameEditorComponent {
+export class NameEditorComponent implements OnInit{
+  form:any
   constructor(private fb:FormBuilder){}
-  form = this.fb.group({
+ngOnInit(): void {
+  this.form = this.fb.group({
     name : ['',[Validators.required]],
     val : ['',[Validators.pattern("^[0-9]*$")]],
     email : ['',[Validators.required]],
@@ -21,10 +23,12 @@ export class NameEditorComponent {
         Validators.pattern("^[0-9]*$")]),
     }),
   })
+}
+  
  
-  // get name(){
-  //   return this.form.get('name');
-  // }
+  get name(){
+    return this.form.get('name');
+  }
 
   // get val(){
   //   return this.form.get('val');
