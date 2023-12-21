@@ -16,7 +16,9 @@ export class NameEditorComponent {
       street: new FormControl(''),
       city: new FormControl(''),
       state: new FormControl(''),
-      zip: new FormControl('',[Validators.pattern("^[0-9]*$")]),
+      zip: new FormControl('',[
+        Validators.required,
+        Validators.pattern("^[0-9]*$")]),
     }),
   })
  
