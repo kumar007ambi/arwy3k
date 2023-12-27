@@ -11,7 +11,7 @@ export class NameEditorComponent implements OnInit{
   constructor(private fb:FormBuilder){}
 ngOnInit(): void {
   this.form = this.fb.group({
-    name : ['',[Validators.required]],
+    name : ['',[Validators.required,Validators.pattern("^[a-zA-Z]*$")]],
     val : ['',[Validators.pattern("^[0-9]*$")]],
     email : ['',[Validators.required]],
     address: new FormGroup({
