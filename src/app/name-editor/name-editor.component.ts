@@ -24,7 +24,7 @@ ngOnInit(): void {
     ]],
     email : ['',[
       Validators.required,
-      Validators.pattern("/^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/")
+      Validators.pattern("[a-z0-9]+@[a-z]+\.[a-z]{2,3}")
     ]],
     address: new FormGroup({
       street: new FormControl(''),
@@ -47,9 +47,9 @@ ngOnInit(): void {
     return this.form.get('val');
   }
 
-  // get email(){
-  //   return this.form.get('email');
-  // }
+  get email(){
+    return this.form.get('email');
+  }
 
 
   // updateName() {
