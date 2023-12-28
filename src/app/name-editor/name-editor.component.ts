@@ -22,7 +22,10 @@ ngOnInit(): void {
       Validators.minLength(8),
       Validators.maxLength(8)
     ]],
-    email : ['',[Validators.required]],
+    email : ['',[
+      Validators.required,
+      Validators.pattern("/^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/")
+    ]],
     address: new FormGroup({
       street: new FormControl(''),
       city: new FormControl(''),
