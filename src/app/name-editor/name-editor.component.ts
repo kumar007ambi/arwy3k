@@ -16,7 +16,12 @@ ngOnInit(): void {
       Validators.pattern("^[a-zA-Z]*$"),
       Validators.minLength(4),
       Validators.maxLength(4)]],
-    val : ['',[Validators.pattern("^[0-9]*$")]],
+    val : ['',[
+      Validators.required,
+      Validators.pattern("^[0-9]*$"),
+      Validators.minLength(8),
+      Validators.maxLength(8)
+    ]],
     email : ['',[Validators.required]],
     address: new FormGroup({
       street: new FormControl(''),
@@ -35,9 +40,9 @@ ngOnInit(): void {
     return this.form.get('name');
   }
 
-  // get val(){
-  //   return this.form.get('val');
-  // }
+  get val(){
+    return this.form.get('val');
+  }
 
   // get email(){
   //   return this.form.get('email');

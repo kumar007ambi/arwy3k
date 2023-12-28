@@ -13,6 +13,18 @@
 
 <label for="val">Number: </label>
 <input id="val" type="number" required formControlName="val" />
+<div
+  *ngIf="val.invalid && (val.dirty || val.touched)"
+  class="alert alert-danger" style="color: red;"
+>
+  <div *ngIf="val.errors?.['required']" style="color: red;">
+    Number is required.
+  </div>
+  <div *ngIf="val.errors?.['minlength']" style="color: red;">
+    Number must be at least 8 digit long.
+  </div>
+</div>
+
 
 <label for="email">Email: </label>
 <input id="email" type="email" required  formControlName="email" />
